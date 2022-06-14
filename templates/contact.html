@@ -1,0 +1,63 @@
+{% extends 'commonPage.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+{% block main %}
+    {{ super() }}
+        <div id="container">
+
+            <h1 class="title"> Contact us!</h1>
+            <img class="imagesIce" id= "ice2" src="{{url_for('static', filename='iceCreamPic.jpg')}}" alt="hello">
+            <form action="" method="get">
+                <div class="main">
+                    <label class="buttonText"> First Name</label>
+                    <small>* </small>
+                    <input class="button" type="text" name="First Name" required> <br><br>
+
+                    <label class="buttonText"> Last Name</label>
+                    <small>* </small>
+                    <input class="button" type="text" name="Last Name" required> <br><br>
+
+                    <label class="buttonText">  Email</label>
+                    <small>* </small>
+                    <input class="button" type="email" name="Email" required><br><br>
+
+                    <label class="buttonText">  Year of birth</label>
+                    <input class="button" type="number" name="Year of birth"   pattern="[1][9][0-9][0-9]">
+                    <small>Please insert: 19**
+                    </small>  <br><br>
+
+                    <label class="buttonText"> Phone number</label>
+                    <input class="button" type="tel" name="PhoneNumber"> <br> <br>
+
+                    <label class="buttonText"> Can we call you?</label>
+                    <select name="call" class="button">
+                        <option value="yes ">yes</option>
+                        <option value="no">no</option>
+                    </select><br><br><br>
+
+                    <input type="submit" name="Submit" value="Submit" class="clicks"> <br> <br>
+                    <button class="clicks" onclick="typeWriter()">Call us</button>
+                    <p id="ourPhoneNumber"></p>
+                </div>
+            </form>
+
+            <div class="navigator">
+                <nav>
+                    <h4 class="Nav">Additional pages</h4>
+                    <a class= "reference" href="{{url_for('homepage_func')}}">Home Page</a> <br> <br>
+                </nav>
+            </div>
+
+        </div>
+{% endblock %}
+</html>
+
+
+       

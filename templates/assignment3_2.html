@@ -1,0 +1,66 @@
+
+{% extends 'commonPage.html' %}
+
+{% block title %}Log In Page{% endblock %}
+
+{% block main %}
+    {{ super() }}
+
+
+
+        {% if session['userIn'] %}
+            <div class="title">
+                <h3>{{ session['username'] | capitalize() }},<br><br>You have successfully registered to our site.<br>we appreciate it</h3>
+            </div>
+            <form action="/log_out" method="get">
+                <input type="submit" name="Log Out" value="Log Out" class="clicks">
+            </form>
+
+        {% else %}
+
+            <h2>Registration:</h2>
+            <form action="/assignment3_2" method="post">
+                <label class="buttonText"> Username</label> <br>
+                <small>* </small>
+                <input type="text" name="username" placeholder="Username" required> <br> <br>
+                <label class="buttonText"> Email</label> <br>
+                <small>* </small>
+                <input type="email" name="email" placeholder="Email" required> <br> <br>
+                <label class="buttonText"> Password</label> <br>
+                <small>* </small>
+                <input type="text" name="password" placeholder="Password" required> <br> <br>
+                <input type="submit" name="registration" value="registration" class="clicks">
+            </form>
+        {% endif %}
+
+        <h2>Search:</h2>
+        <form action="/assignment3_2" method="get">
+            <label class="buttonText"> User name</label> <br>
+            <input type="text" name="username-search" placeholder="Username" >
+            <input type="submit" name="search" value="search" class="clicks">
+        </form>
+
+        {% if message %}
+                <h2>{{ message }}</h2>
+        {% endif %}
+        {% if Username %}
+            <h2>{{ Username }}</h2>
+            <h3>Email: {{ Email }}</h3>
+            <h3>Password: {{ Password }}</h3>
+        {% endif %}
+
+        {% if userDict %}
+            <ol>
+                {% for k, v in userDict.items() %}
+                    <li><h2>Username: {{ k }}</h2></li>
+                    <li><h2>Email: {{ v[0] }}</h2></li>
+                    <li><h2>Password: {{ v[1] }} <br><br></h2></li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+
+
+
+{% endblock %}
+
+

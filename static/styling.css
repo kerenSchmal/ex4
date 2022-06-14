@@ -1,0 +1,151 @@
+
+*{
+    font-family: cursive; 
+    background-color: rgb(224, 235, 182);
+ }
+ 
+ li {
+     display: inline;
+     white-space: break-spaces;
+     padding-right: 0%;
+     margin-right: 0%
+     ;
+ }
+ 
+ .active {
+     color:  rgb(218, 60, 32);
+     text-decoration: none;
+ }
+ 
+ header{
+     font-size: 11px;
+     border-bottom: 0.2vw solid rgb(205, 64, 21); 
+     grid-area: Header;
+ }
+ 
+ .title{
+    color: red;
+    text-align: center;
+
+    font-size: 200%;
+    text-shadow: 0vw 0.5vw 1vw rgb(228, 118, 118);
+    margin: 1%; 
+    grid-area: Title;
+ }
+ 
+ #subTitle {
+     color: tomato;
+     font-size: 90%;
+ }
+ 
+ 
+ .main{
+     grid-area: Main;
+ }
+ 
+ .buttonText{
+     color: rgb(155, 12, 60) ;
+     border-bottom: 0.15vw solid ;
+     font-size: 100%; 
+     margin-left: 1%;
+     margin-right: 5%;
+ }
+
+
+ .images{
+    border-radius: 50%;
+    background-color: rgb(153, 126, 126);
+    border: 0.3vw solid rgb(210, 191, 153); 
+    margin-left: 95%;
+    block-size: 3vw;
+ }
+
+ .imagesIce{
+     border-radius: 20%;
+     block-size: 15vw;
+     margin-left: 38%;
+     grid-area: MainPic;
+     border: 0.8vw solid rgb(210, 191, 153); 
+ }
+
+  .navigator{
+     grid-area: Nav;
+ }
+ .Nav{
+     font-size: 90%;
+     border-top: 0.25vw solid rgb(205, 64, 21); 
+     border-bottom: 0.25vw solid rgb(205, 64, 21);
+     padding: 5%; 
+     padding-top: 1%;
+     padding-bottom: 1%;
+     margin-left: 1%;
+     margin-right: 80%;
+     text-align: center;
+ }
+ 
+ .reference{
+     font-size: 50%;
+     text-decoration: none;
+     margin: 0%;
+ }
+ 
+
+ 
+ #animation {
+     text-align: center;
+     color: rgb(220, 109, 146);
+     font-size: 400%;
+     margin-right: 45%;
+     animation: slidein 4s infinite;
+     animation-name: slidein;
+ }
+    
+ .clicks{
+    background-color: rgb(237, 188, 169);
+}
+
+.clicks:hover{
+    background-color: yellow;
+}
+
+ @keyframes slidein{
+     from {
+         margin-left: 100%;
+         transform: rotate(0.5turn)
+       }
+       to {
+         margin-left: 40%;
+       }
+ }
+ 
+ @media only screen and (max-width: 700px) {
+     * {
+         background-color: rgb(235, 190, 182);
+         display: grid;
+         grid-template-areas: 
+         'Header'
+         'Main'
+         'Title'
+         'MainPic'
+         'Nav';
+     }  
+  
+     .main{
+        margin-right: 100%;
+        margin-left: 30%;
+        }
+    li{
+         padding-right: 10%;
+        margin-right: 70%;
+        white-space: inherit;
+    }
+    .buttonText{
+        padding: 1%;
+    }
+    .button{
+        padding: 1%;
+        margin-top: 5%;
+    }
+ }
+ 
+ 

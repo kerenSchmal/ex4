@@ -1,0 +1,35 @@
+{% extends 'commonPage.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+{% block main %}
+    {{ super() }}
+
+    <div class="title"> Welcome to the ICE CREAM website
+        <p id="subTitle"> Here you can invite the best ice cream for you
+
+        </p>
+    </div>
+
+    <div class="main">
+        <p id="animation">hello!!</p>
+    </div>
+
+    <img class="imagesIce" id= "ice1" src="{{url_for('static', filename='iceCreamPic.jpg')}}" alt="hello">
+    
+
+    <div class="navigator">
+        <nav> 
+            <h4 class="Nav"> Additional pages</h4>
+            <a class= "reference" href="{{url_for('contact_func')}}"> Contact us</a>
+        </nav>
+    </div>
+    
+  
+  {% endblock %}
+</html>
