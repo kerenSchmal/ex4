@@ -28,3 +28,31 @@ function change() {
     }
 setInterval(change, 1000);
 
+
+
+
+function getUserBy_id(user_id){
+    fetch('https://reqres.in/api/users/'+user_id).then(
+        response => response.json()
+    ).then(
+        responseOBJECT => createUser(responseOBJECT.data)
+    ).catch(
+        err => console.log(err)
+    );
+}
+
+function createUser(response){
+    let user = response;
+    const currMain = document.querySelector("main")
+
+    const section = document.createElement('section')
+    section.innerHTML = `
+        <img src="${user.avatar}" alt="Profile Picture"/>
+        <div>
+         <span>${user.first_name} ${user.last_name}</span>
+         <br>
+         <a href="mailto:${user.email}">Send Email</a>
+        </div> 
+        `
+    currMain.appendChild(section)
+}

@@ -10,7 +10,7 @@
 
         {% if session['userIn'] %}
             <div class="title">
-                <h3>{{ session['username'] | capitalize() }},<br><br>You have successfully registered to our site.<br>we appreciate it</h3>
+                <h3>{{ session['username'] | capitalize() }},<br><br>You have successfully registered to our site.<br>We appreciate it</h3>
             </div>
             <form action="/log_out" method="get">
                 <input type="submit" name="Log Out" value="Log Out" class="clicks">
@@ -52,9 +52,12 @@
         {% if userDict %}
             <ol>
                 {% for k, v in userDict.items() %}
+                    <div class="border">
                     <li><h2>Username: {{ k }}</h2></li>
                     <li><h2>Email: {{ v[0] }}</h2></li>
                     <li><h2>Password: {{ v[1] }} <br><br></h2></li>
+                     </div>
+                    <br>
                 {% endfor %}
             </ol>
         {% endif %}

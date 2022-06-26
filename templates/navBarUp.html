@@ -8,16 +8,18 @@
     <body>
 
         <header>
-            <img class="images" src="{{url_for('static', filename='hello.png')}}" alt="hello">
+            <img class="images" src="{{url_for('static', filename='media/hello.png')}}" alt="hello">
             {% if session['userIn'] %}
                 <h3>Welcome, {{ session['username'] | capitalize() }}</h3>
             {% endif %}
             <nav>
                 <ul class="topLinks">
-                    <li> <a href="{{url_for('contact_func')}}"> Contact us  </a>  </li>
-                    <li> <a href="{{url_for('homepage_func')}}"> Home Page </a>  </li>
-                    <li> <a href="{{url_for('assignment3_1_func')}}"> assignment3_1 </a>  </li>
-                    <li> <a href="{{url_for('assignment3_2_func')}}"> assignment3_2 </a>  </li>
+                    <li> <a href="{{url_for('contactus.contact_func')}}"> Contact us  </a>  </li>
+                    <li> <a href="{{url_for('home_page.homepage_func')}}"> Home Page </a>  </li>
+                    <li> <a href="{{url_for('assignment3_1.assignment3_1_func')}}"> assignment3_1 </a>  </li>
+                    <li> <a href="{{url_for('assignment3_2.assignment3_2_func')}}"> assignment3_2 </a>  </li>
+                    <li> <a href="{{url_for('assignment_4.assignment_4_func')}}"> assignment_4 </a>  </li>
+
                 </ul>
             </nav>
         </header>

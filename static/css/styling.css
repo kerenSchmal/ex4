@@ -89,7 +89,10 @@
      margin: 0%;
  }
  
-
+.border{
+     border: 0.3vw solid black;
+    padding: 1%;
+}
  
  #animation {
      text-align: center;
