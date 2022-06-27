@@ -1,0 +1,99 @@
+
+{% extends 'commonPage.html' %}
+
+{% block title %}users Page{% endblock %}
+
+{% block main %}
+    {{ super() }}
+
+    <div class="title">
+         <h3>User page</h3>
+    </div>
+
+      {% if message %}
+                <h2 id="subTitle">{{ message }}</h2>
+        {% endif %}
+
+
+    <div class="container">
+        <h2>Insert user</h2>
+        <form action="/insert_user" method="POST">
+            <small>* </small>
+            <input type="text" name="username" placeholder="Username" required> <br> <br>
+            <small>* </small>
+            <input type="email" name="email" placeholder="Email" required> <br> <br>
+            <small>* </small>
+            <input type="text" name="password" placeholder="Password" required> <br> <br>
+            <input type="submit" name="registration" value="registration" class="clicks">
+        </form>
+    <br>
+    </div>
+
+    <h2>Delete user</h2>
+    <form action="/delete_user" method="post">
+                <small>* </small>
+                 <input type="text" name="username" placeholder="Username" required><br><br>
+                <input type="submit" value="Delete" class="clicks">
+    </form>
+    <br>
+
+    <h2>Update user</h2>
+     <form action="/update_user" method="post">
+          <small>* </small>
+         <input type="text" name="username" placeholder="Username" required><br><br>
+          <small>* </small>
+         <input type="text" name="email" placeholder="Email" required><br><br>
+          <small>* </small>
+         <input type="text" name="password" placeholder="Password" required><br><br>
+                <input type="submit" value="Update" class="clicks">
+    </form>
+    <br><br>
+
+
+    <h2>List of users</h2>
+     {% for user in users %}
+        <div class="container">
+            <div class="border">
+                <h2>{{ user.username }}</h2>
+                <h3>Email: {{ user.email }}</h3>
+                <h3>Password: {{ user.password }}</h3>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+
+
+
+    <h2>Find user- frontend</h2>
+     User id: <input type="text" id="user_id" >
+    <button class="clicks" onclick="getUserBy_id(document.getElementById('user_id').value)">Search user</button></h3>
+    <main>
+
+    </main>
+
+
+
+      <h2>Find user- backend</h2>
+    <form action="/assignment_4/outer_source" method="get">
+        User id: <input type="text" name="user_id" >
+        <input type="submit" value="Search user" class="clicks">
+    </form>
+      <br><br>
+
+    {% if session.user %}
+         <div class="border">
+             <form action="/assignment_4/clear" method="get">
+                <h4>ID: {{ session.user.id }}</h4>
+                <h4>Email: {{ session.user.email }}</h4>
+                <h4>First name: {{ session.user.first_name }}</h4>
+                <h4>Last name: {{ session.user.last_name }}</h4>
+                <img src="{{ session.user.avatar }}" alt="pic">
+                <input type="submit" value="clear" class="clicks">
+            </form>
+        </div>
+    {% endif %}
+
+
+{% endblock %}
+
+
